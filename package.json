@@ -1,0 +1,25 @@
+{
+  "name": "my-element",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "main": "index.js",
+  "scripts": {
+   "dev": "pnpm -C play dev",
+   "docs:dev": "pnpm -C docs dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@my-element/components": "workspace:*",
+    "@my-element/theme-chalk": "workspace:*",
+    "@my-element/utils": "workspace:*",
+    "react": "^19.2.5",
+    "typescript": "^6.0.3"
+  }
+}
