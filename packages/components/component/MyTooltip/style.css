@@ -1,0 +1,104 @@
+.my-tooltip {
+    --my-popover-bg-color: #fff;
+    --my-popover-font-size: 14px;
+    --my-popover-border-color: #e4e7ed;
+    --my-popover-padding: 12px;
+    --my-popover-border-radius: 4px;
+    --my-text-color-regular: #303133;
+    --my-box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    --my-transition-duration: 0.25s;
+    display: inline-block;
+}
+
+.my-tooltip {
+    /* 弹出层 */
+    .my-tooltip__popper {
+        background: var(--my-popover-bg-color);
+        border-radius: var(--my-popover-border-radius);
+        border: 1px solid var(--my-popover-border-color);
+        padding: var(--my-popover-padding);
+        color: var(--my-text-color-regular);
+        line-height: 1.4;
+        text-align: justify;
+        font-size: var(--my-popover-font-size);
+        box-shadow: var(--my-box-shadow-light);
+        word-break: break-all;
+        box-sizing: border-box;
+        z-index: 1000;
+        position: absolute;
+
+        /* 悬浮层离触发元素更远 */
+        margin: 8px 0;
+
+        /* 🔥 纯淡入淡出动画（无缩放） */
+        opacity: 0;
+        visibility: hidden;
+        transition:
+                opacity var(--my-transition-duration) ease-out,
+                visibility var(--my-transition-duration) ease-out;
+    }
+
+    /* 箭头 */
+    .my-tooltip__popper #arrow,
+    .my-tooltip__popper #arrow::before {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        box-sizing: border-box;
+        background: var(--my-popover-bg-color);
+    }
+
+    .my-tooltip__popper #arrow {
+        visibility: hidden;
+    }
+
+    .my-tooltip__popper #arrow::before {
+        visibility: visible;
+        content: "";
+        transform: rotate(45deg);
+    }
+
+    /* 箭头位置 */
+    .my-tooltip__popper[data-popper-placement^='top'] > #arrow {
+        bottom: -5px;
+    }
+
+    .my-tooltip__popper[data-popper-placement^='bottom'] > #arrow {
+        top: -5px;
+    }
+
+    .my-tooltip__popper[data-popper-placement^='left'] > #arrow {
+        right: -5px;
+    }
+
+    .my-tooltip__popper[data-popper-placement^='right'] > #arrow {
+        left: -5px;
+    }
+
+    /* 箭头边框 */
+    .my-tooltip__popper[data-popper-placement^="top"] > #arrow::before {
+        border-right: 1px solid var(--my-popover-border-color);
+        border-bottom: 1px solid var(--my-popover-border-color);
+    }
+
+    .my-tooltip__popper[data-popper-placement^="bottom"] > #arrow::before {
+        border-left: 1px solid var(--my-popover-border-color);
+        border-top: 1px solid var(--my-popover-border-color);
+    }
+
+    .my-tooltip__popper[data-popper-placement^="left"] > #arrow::before {
+        border-right: 1px solid var(--my-popover-border-color);
+        border-top: 1px solid var(--my-popover-border-color);
+    }
+
+    .my-tooltip__popper[data-popper-placement^="right"] > #arrow::before {
+        border-left: 1px solid var(--my-popover-border-color);
+        border-bottom: 1px solid var(--my-popover-border-color);
+    }
+
+    /* 🔥 淡入 */
+    .my-tooltip__popper.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
