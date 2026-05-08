@@ -28,11 +28,13 @@ const MyTooltip=forwardRef<TooltipInstance,TooltipProps>((props, ref)=>{
         openTime++
         console.log(`open Time${openTime}`);
         setIsOpen(true)
+    
     }
     const close=()=>{
         closeTime++
         console.log(`closeTime${closeTime}`);
         setIsOpen(false)
+        
     }
     const openDeBounce=debounce(open,openDelay)
     const closeDeBounce=debounce(close,closeDelay)
