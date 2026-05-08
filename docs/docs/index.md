@@ -7,11 +7,11 @@ hero:
   tagline: This is the tagline
   actions:
     - theme: brand
-      text: Quick Start
+      text: 快速开始
       link: /guide/start/introduction
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/chenmiaozhan2024/MyElement
   image:
     src: /rspress-icon.png
     alt: Logo

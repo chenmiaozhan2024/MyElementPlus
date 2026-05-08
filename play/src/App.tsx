@@ -1,5 +1,5 @@
 import MyButton from '@my-element/components/component/MyButton/MyButton.tsx'
-import { MyIcon } from '@my-element/components'
+import { MyIcon, MySwitch } from '@my-element/components'
 // import type { ButtonProps } from '@my-element/components/component/MyButton/type'
 function App() {
   return (
@@ -48,6 +48,8 @@ function App() {
                 <a href="https://www.baidu.com">点击跳转到百度</a>
                  <MyIcon icon='plus'></MyIcon>
                </MyButton>
+                 <div style={{ height: '20px' }}></div>
+               <MySwitch activeText='开'></MySwitch>
       </div>
     </>
   )
