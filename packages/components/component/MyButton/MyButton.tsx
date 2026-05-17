@@ -1,4 +1,4 @@
-import type {ButtonProps} from './type.ts'
+import type {ButtonProps} from './type'
 import React from "react";
 import classNames from 'classnames'
 import MyIcon from "../MyIcon/MyIcon";

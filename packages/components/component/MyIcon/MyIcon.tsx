@@ -1,4 +1,4 @@
-import type {MyIconProps} from './type.ts';
+import type {MyIconProps} from './type';
 import * as React from "react";
 import {Icon} from '@iconify/react'
 const MyIcon:React.FC<MyIconProps>=(props)=>{

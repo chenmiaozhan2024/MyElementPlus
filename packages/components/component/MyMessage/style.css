@@ -1,0 +1,81 @@
+.my-message {
+  --my-message-bg-color: var(--my-color-info-light-9);
+  --my-message-border-color: var(--my-border-color-lighter);
+  --my-message-text-color: var(--my-text-color-regular);
+  --my-message-icon-color: var(--my-color-info);
+  --my-message-icon-size: 16px;
+  --my-message-close-size: 16px;
+  --my-message-close-color: var(--my-text-color-placeholder);
+  --my-message-close-hover-color: var(--my-text-color-secondary);
+  --my-message-padding: 15px 20px 15px 15px;
+}
+.my-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--my-border-radius-base);
+  border-width: var(--my-border-width);
+  border-style: var(--my-border-style);
+  border-color: var(--my-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--my-message-bg-color);
+  padding: var(--my-message-padding);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: top var(--my-transition-duration), opacity var(--my-transition-duration), transform var(--my-transition-duration);
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+.my-message .my-message__icon {
+  flex-shrink: 0;
+  font-size: var(--my-message-icon-size);
+  color: var(--my-message-icon-color);
+}
+.my-message .my-message_content {
+  color: var(--my-message-text-color);
+  overflow-wrap: anywhere;
+  font-size: var(--my-font-size-base);
+  line-height: 1;
+}
+.my-message.is-close .my-message_content {
+  padding-right: 22px;
+}
+.my-message .my-message__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--my-message-close-color);
+  font-size: var(--my-message-close-size);
+}
+.my-message .my-message__close:hover {
+  color: var(--my-message-close-hover-color);
+}
+.my-message--info {
+  --my-message-bg-color: var(--my-color-info-light-9);
+  --my-message-border-color: var(--my-color-info-light-8);
+  --my-message-icon-color: var(--my-color-info);
+}
+.my-message--success {
+  --my-message-bg-color: var(--my-color-success-light-9);
+  --my-message-border-color: var(--my-color-success-light-8);
+  --my-message-icon-color: var(--my-color-success);
+}
+.my-message--warning {
+  --my-message-bg-color: var(--my-color-warning-light-9);
+  --my-message-border-color: var(--my-color-warning-light-8);
+  --my-message-icon-color: var(--my-color-warning);
+}
+.my-message--error {
+  --my-message-bg-color: var(--my-color-danger-light-9);
+  --my-message-border-color: var(--my-color-danger-light-8);
+  --my-message-icon-color: var(--my-color-danger);
+}
+.my-message.fade-up-enter-from,
+.my-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

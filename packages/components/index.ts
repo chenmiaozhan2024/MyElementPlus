@@ -5,3 +5,4 @@ export { default as MyCollapseItem } from './component/MyCollapse/MyCollapseItem
 export { default as MyTooltip } from './component/MyTooltip/MyTooltip';
 export { default as MySwitch } from './component/MySwitch/SwitchProps';
 export { default as MyDropdown } from './component/MyDropdown/Dropdown';
+export { createMessage } from './component/MyMessage/method';

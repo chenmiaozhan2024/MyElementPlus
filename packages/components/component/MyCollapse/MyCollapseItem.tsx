@@ -2,7 +2,7 @@ import React from "react";
 import type {CollapseItemProps} from './type'
 import classNames from 'classnames'
 import {useCallapseContext} from './CollapseContext'
-import MyIcon from '../MyIcon/MyIcon.tsx'
+import MyIcon from '../MyIcon/MyIcon'
 import './style.css'
 const MyCollapseItem:React.FC<CollapseItemProps>=(CollapseItemProps)=>{
   const {name,title,disabled, children } =CollapseItemProps

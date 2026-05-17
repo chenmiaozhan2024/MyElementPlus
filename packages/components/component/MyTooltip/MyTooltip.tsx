@@ -1,5 +1,5 @@
 import {forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState} from "react";
-import type {TooltipProps,TooltipInstance} from './type.ts'
+import type {TooltipProps,TooltipInstance} from './type'
 import type {Instance} from '@popperjs/core'
 import {createPopper} from '@popperjs/core'
 import useClickOutside from "@my-element/utils/hooks/useClickOutside.js";
