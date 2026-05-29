@@ -8,7 +8,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -C play dev",
+    "dev": "pnpm -C play dev --open",
     "docs:dev": "pnpm -C docs dev"
   },
   "keywords": [],

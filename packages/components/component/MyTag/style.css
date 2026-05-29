@@ -1,0 +1,187 @@
+.my-tag {
+    --my-tag-font-size: var(--my-font-size-base);
+    --my-tag-border-radius: var(--my-border-radius-base);
+    --my-tag-height: 24px;
+    --my-tag-padding: 0 8px;
+    --my-tag-border-color: transparent;
+    --my-tag-bg-color: transparent;
+    --my-tag-text-color: var(--my-color-primary);
+    --my-tag-hover-color: var(--my-color-primary-light-3);
+    --my-tag-close-color: var(--my-text-color-placeholder);
+    --my-tag-close-hover-color: var(--my-text-color-secondary);
+    display: inline-flex;
+    align-items: center;
+    height: var(--my-tag-height);
+    padding: var(--my-tag-padding);
+    font-size: var(--my-tag-font-size);
+    line-height: 1;
+    border-width: var(--my-border-width);
+    border-style: var(--my-border-style);
+    border-color: var(--my-tag-border-color);
+    border-radius: var(--my-tag-border-radius);
+    background-color: var(--my-tag-bg-color);
+    color: var(--my-tag-text-color);
+    white-space: nowrap;
+    box-sizing: border-box;
+    cursor: default;
+    outline: none;
+    vertical-align: middle;
+    gap: 4px;
+}
+
+/* hit 描边 */
+.my-tag.is-hit {
+    border-color: var(--my-tag-text-color);
+}
+
+/* round 圆形 */
+.my-tag.is-round {
+    border-radius: var(--my-border-radius-round);
+}
+
+/* 关闭图标 */
+.my-tag .my-tag__icon {
+    font-size: 14px;
+    color: var(--my-tag-close-color);
+    cursor: pointer;
+    border-radius: 50%;
+}
+.my-tag .my-tag__icon:hover {
+    color: var(--my-tag-close-hover-color);
+}
+
+/* ============ effect: light ============ */
+
+/* Primary light */
+.my-tag--primary {
+    --my-tag-bg-color: var(--my-color-primary-light-9);
+    --my-tag-border-color: var(--my-color-primary-light-8);
+    --my-tag-text-color: var(--my-color-primary);
+    --my-tag-hover-color: var(--my-color-primary-light-3);
+}
+
+/* Success light */
+.my-tag--success {
+    --my-tag-bg-color: var(--my-color-success-light-9);
+    --my-tag-border-color: var(--my-color-success-light-8);
+    --my-tag-text-color: var(--my-color-success);
+    --my-tag-hover-color: var(--my-color-success-light-3);
+}
+
+/* Info light */
+.my-tag--info {
+    --my-tag-bg-color: var(--my-color-info-light-9);
+    --my-tag-border-color: var(--my-color-info-light-8);
+    --my-tag-text-color: var(--my-color-info);
+    --my-tag-hover-color: var(--my-color-info-light-3);
+}
+
+/* Warning light */
+.my-tag--warning {
+    --my-tag-bg-color: var(--my-color-warning-light-9);
+    --my-tag-border-color: var(--my-color-warning-light-8);
+    --my-tag-text-color: var(--my-color-warning);
+    --my-tag-hover-color: var(--my-color-warning-light-3);
+}
+
+/* Danger light */
+.my-tag--danger {
+    --my-tag-bg-color: var(--my-color-danger-light-9);
+    --my-tag-border-color: var(--my-color-danger-light-8);
+    --my-tag-text-color: var(--my-color-danger);
+    --my-tag-hover-color: var(--my-color-danger-light-3);
+}
+
+/* ============ effect: dark ============ */
+
+.my-tag--primary.my-tag--dark {
+    --my-tag-bg-color: var(--my-color-primary);
+    --my-tag-border-color: var(--my-color-primary);
+    --my-tag-text-color: var(--my-color-white);
+    --my-tag-hover-color: var(--my-color-primary-light-3);
+}
+
+.my-tag--success.my-tag--dark {
+    --my-tag-bg-color: var(--my-color-success);
+    --my-tag-border-color: var(--my-color-success);
+    --my-tag-text-color: var(--my-color-white);
+    --my-tag-hover-color: var(--my-color-success-light-3);
+}
+
+.my-tag--info.my-tag--dark {
+    --my-tag-bg-color: var(--my-color-info);
+    --my-tag-border-color: var(--my-color-info);
+    --my-tag-text-color: var(--my-color-white);
+    --my-tag-hover-color: var(--my-color-info-light-3);
+}
+
+.my-tag--warning.my-tag--dark {
+    --my-tag-bg-color: var(--my-color-warning);
+    --my-tag-border-color: var(--my-color-warning);
+    --my-tag-text-color: var(--my-color-white);
+    --my-tag-hover-color: var(--my-color-warning-light-3);
+}
+
+.my-tag--danger.my-tag--dark {
+    --my-tag-bg-color: var(--my-color-danger);
+    --my-tag-border-color: var(--my-color-danger);
+    --my-tag-text-color: var(--my-color-white);
+    --my-tag-hover-color: var(--my-color-danger-light-3);
+}
+
+/* ============ effect: plain ============ */
+
+.my-tag--primary.my-tag--plain {
+    --my-tag-bg-color: transparent;
+    --my-tag-border-color: var(--my-color-primary-light-5);
+    --my-tag-text-color: var(--my-color-primary);
+    --my-tag-hover-color: var(--my-color-primary-light-3);
+}
+
+.my-tag--success.my-tag--plain {
+    --my-tag-bg-color: transparent;
+    --my-tag-border-color: var(--my-color-success-light-5);
+    --my-tag-text-color: var(--my-color-success);
+    --my-tag-hover-color: var(--my-color-success-light-3);
+}
+
+.my-tag--info.my-tag--plain {
+    --my-tag-bg-color: transparent;
+    --my-tag-border-color: var(--my-color-info-light-5);
+    --my-tag-text-color: var(--my-color-info);
+    --my-tag-hover-color: var(--my-color-info-light-3);
+}
+
+.my-tag--warning.my-tag--plain {
+    --my-tag-bg-color: transparent;
+    --my-tag-border-color: var(--my-color-warning-light-5);
+    --my-tag-text-color: var(--my-color-warning);
+    --my-tag-hover-color: var(--my-color-warning-light-3);
+}
+
+.my-tag--danger.my-tag--plain {
+    --my-tag-bg-color: transparent;
+    --my-tag-border-color: var(--my-color-danger-light-5);
+    --my-tag-text-color: var(--my-color-danger);
+    --my-tag-hover-color: var(--my-color-danger-light-3);
+}
+
+/* ============ size ============ */
+
+.my-tag--large {
+    --my-tag-height: 32px;
+    --my-tag-padding: 0 12px;
+    --my-tag-font-size: var(--my-font-size-base);
+}
+
+.my-tag--small {
+    --my-tag-height: 20px;
+    --my-tag-padding: 0 6px;
+    --my-tag-font-size: var(--my-font-size-extra-small);
+}
+
+/* ============ disabledTransitions ============ */
+
+.my-tag.is-disabledTransitions {
+    transition: none;
+}
