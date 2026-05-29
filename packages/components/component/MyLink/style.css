@@ -1,0 +1,82 @@
+.my-link {
+    --my-link-font-weight: var(--my-font-weight-primary);
+    --my-link-text-color: var(--my-text-color-regular);
+    --my-link-hover-text-color: var(--my-color-primary);
+    --my-link-active-text-color: var(--my-color-primary-dark-2);
+    --my-link-disabled-text-color: var(--my-disabled-text-color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    font-size: var(--my-font-size-base);
+    font-weight: var(--my-link-font-weight);
+    color: var(--my-link-text-color);
+    text-decoration: none;
+    outline: none;
+    transition: color var(--my-transition-duration), opacity var(--my-transition-duration);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.my-link:hover {
+    color: var(--my-link-hover-text-color);
+}
+
+.my-link:active {
+    color: var(--my-link-active-text-color);
+}
+
+.my-link [class*=my-icon] + span {
+    margin-left: 4px;
+}
+
+.my-link--always {
+    text-decoration: underline;
+}
+
+.my-link--hover:hover {
+    text-decoration: underline;
+}
+
+.my-link--never {
+    text-decoration: none;
+}
+
+.my-link.is-disabled,
+.my-link.is-disabled:hover,
+.my-link.is-disabled:focus {
+    color: var(--my-link-disabled-text-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.my-link--primary {
+    --my-link-text-color: var(--my-color-primary);
+    --my-link-hover-text-color: var(--my-color-primary-light-3);
+    --my-link-active-text-color: var(--my-color-primary-dark-2);
+}
+
+.my-link--success {
+    --my-link-text-color: var(--my-color-success);
+    --my-link-hover-text-color: var(--my-color-success-light-3);
+    --my-link-active-text-color: var(--my-color-success-dark-2);
+}
+
+.my-link--warning {
+    --my-link-text-color: var(--my-color-warning);
+    --my-link-hover-text-color: var(--my-color-warning-light-3);
+    --my-link-active-text-color: var(--my-color-warning-dark-2);
+}
+
+.my-link--danger {
+    --my-link-text-color: var(--my-color-danger);
+    --my-link-hover-text-color: var(--my-color-danger-light-3);
+    --my-link-active-text-color: var(--my-color-danger-dark-2);
+}
+
+.my-link--info {
+    --my-link-text-color: var(--my-color-info);
+    --my-link-hover-text-color: var(--my-color-info-light-3);
+    --my-link-active-text-color: var(--my-color-info-dark-2);
+}
