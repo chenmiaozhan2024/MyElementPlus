@@ -1,0 +1,215 @@
+.my-input {
+  --my-input-text-color: var(--my-text-color-regular);
+  --my-input-border: var(--my-border);
+  --my-input-hover-border: var(--my-border-color-hover);
+  --my-input-focus-border: var(--my-color-primary);
+  --my-input-border-color: var(--my-border-color);
+  --my-input-border-radius: var(--my-border-radius-base);
+  --my-input-bg-color: var(--my-fill-color-blank);
+  --my-input-icon-color: var(--my-text-color-placeholder);
+  --my-input-placeholder-color: var(--my-text-color-placeholder);
+  --my-input-hover-border-color: var(--my-border-color-hover);
+  --my-input-clear-hover-color: var(--my-text-color-secondary);
+  --my-input-focus-border-color: var(--my-color-primary);
+  --my-input-height: 32px;
+  position: relative;
+  font-size: var(--my-font-size-base);
+  display: inline-flex;
+  width: 100%;
+  line-height: var(--my-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.my-input.is-disabled {
+  cursor: not-allowed;
+}
+.my-input.is-disabled .my-input__wrapper {
+  background-color: var(--my-disabled-bg-color);
+  box-shadow: 0 0 0 1px var(--my-disabled-border-color) inset;
+  cursor: not-allowed;
+}
+.my-input.is-disabled .my-input__inner {
+  color: var(--my-disabled-text-color);
+  -webkit-text-fill-color: var(--my-disabled-text-color);
+  cursor: not-allowed;
+}
+.my-input.is-disabled .my-textarea__inner {
+  background-color: var(--my-disabled-bg-color);
+  box-shadow: 0 0 0 1px var(--my-disabled-border-color) inset;
+  color: var(--my-disabled-text-color);
+  -webkit-text-fill-color: var(--my-disabled-text-color);
+  cursor: not-allowed;
+}
+.my-input.is-prepend > .my-input__wrapper {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.my-input.is-append > .my-input__wrapper {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.my-input--large {
+  --my-input-height: 40px;
+  font-size: 14px;
+}
+.my-input--large .my-input__wrapper {
+  padding: 1px 15px;
+}
+.my-input--large .my-input__inner {
+  --my-input-inner-height: calc(var(--my-input-height, 40px) - 2px);
+  height: var(--my-input-inner-height);
+  line-height: var(--my-input-inner-height);
+}
+.my-input--small {
+  --my-input-height: 24px;
+  font-size: 12px;
+}
+.my-input--small .my-input__wrapper {
+  padding: 1px 7px;
+}
+.my-input--small .my-input__inner {
+  --my-input-inner-height: calc(var(--my-input-height, 24px) - 2px);
+  height: var(--my-input-inner-height);
+  line-height: var(--my-input-inner-height);
+}
+.my-input__prefix,
+.my-input__suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  color: var(--my-input-icon-color);
+  transition: all var(--my-transition-duration);
+  align-items: center;
+}
+.my-input__prefix > :first-child {
+  margin-left: 0 !important;
+}
+.my-input__prefix > :last-child {
+  margin-right: 8px !important;
+}
+.my-input__suffix > :first-child {
+  margin-left: 8px !important;
+}
+.my-input__suffix > :last-child {
+  margin-right: 0 !important;
+}
+.my-input__prepend,
+.my-input__append {
+  background-color: var(--my-fill-color-light);
+  color: var(--my-color-info);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-radius: var(--my-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.my-input__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 0 0 0 var(--my-input-border-color) inset,
+    0 1px 0 0 var(--my-input-border-color) inset,
+    0 -1px 0 0 var(--my-input-border-color) inset;
+}
+.my-input__append {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 1px 0 0 var(--my-input-border-color) inset,
+    0 -1px 0 0 var(--my-input-border-color) inset,
+    -1px 0 0 0 var(--my-input-border-color) inset;
+}
+.my-input__append > .my-input__wrapper {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.my-input--textarea {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: var(--my-font-size-base);
+}
+.my-textarea__inner {
+  position: relative;
+  display: block;
+  resize: vertical;
+  padding: 5px 11px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--my-input-text-color);
+  background-color: var(--my-input-bg-color);
+  background-image: none;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 1px var(--my-input-border-color) inset;
+  border-radius: var(--my-input-border-radius);
+  transition: box-shadow var(--my-transition-duration);
+  border: none;
+  outline: none;
+}
+.my-textarea__inner:focus {
+  box-shadow: 0 0 0 1px var(--my-input-focus-border-color) inset;
+}
+.my-textarea__inner::placeholder {
+  color: var(--my-input-placeholder-color);
+}
+.my-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 11px;
+  background-color: var(--my-input-bg-color);
+  background-image: none;
+  border-radius: var(--my-input-border-radius);
+  transition: box-shadow var(--my-transition-duration);
+  box-shadow: 0 0 0 1px var(--my-input-border-color) inset;
+  cursor: text;
+}
+.my-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--my-input-hover-border-color) inset;
+}
+.my-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--my-input-focus-border-color) inset;
+}
+.my-input__inner {
+  --my-input-inner-height: calc(var(--my-input-height, 32px) - 2px);
+  width: 100%;
+  flex-grow: 1;
+  -webkit-appearance: none;
+  color: var(--my-input-text-color);
+  font-size: inherit;
+  height: var(--my-input-inner-height);
+  line-height: var(--my-input-inner-height);
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  box-sizing: border-box;
+}
+.my-input__inner::placeholder {
+  color: var(--my-input-placeholder-color);
+}
+.my-input__clear,
+.my-input__password {
+  color: var(--my-input-icon-color);
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--my-transition-duration);
+}
+.my-input__clear:hover,
+.my-input__password:hover {
+  color: var(--my-input-clear-hover-color);
+}
