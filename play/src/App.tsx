@@ -2,16 +2,13 @@
 // import { MyIcon, MySwitch } from '@my-element/components'
 // import {MyTag} from '@my-element/components'
 // import {MyLink} from '@my-element/components'
-import {MyButton, MyInput} from '@my-element/components'
-import { useState } from 'react';
+import MySelectTest from "./Test/MySelect/MySelect";
 function App() {
-  const [value, setValue] = useState('hello');
+  // const [value, setValue] = useState('hello');
 
   return (
     <div>
-      <MyInput modelValue={value}  onUpdateModelValue={setValue}  showPassword type='password'/>
-      <p>当前值: {value}</p>
-      <MyButton onClick={() => setValue('changed')} type='primary'>外部修改</MyButton>
+     <MySelectTest></MySelectTest>
     </div>
   );
 }
