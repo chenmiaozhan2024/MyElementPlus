@@ -9,4 +9,5 @@ export { createMessage } from './component/MyMessage/method';
 export { default as MyTag } from './component/MyTag/MyTag'
 export { default as MyLink } from './component/MyLink/MyLink'
 export { default as MyInput } from './component/MyInput/MyInput'
+export type { InputInstance } from './component/MyInput/type'
 export { default as MySelect} from './component/MySelect/MySelect'

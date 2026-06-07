@@ -7,7 +7,7 @@ import { debounce } from 'lodash-es'
 import './style.css'
 import classNames from "classnames";
 const MyTooltip=forwardRef<TooltipInstance,TooltipProps>((props, ref)=>{
-    const {content,placement='bottom',children,trigger='hover',manual=false,popperOptionsType,openDelay=0,closeDelay=0}=props
+    const {content,placement='bottom',children,trigger='hover',manual=false,popperOptionsType,openDelay=0,closeDelay=0,onClickOutSide}=props
     const [isOpen,setIsOpen]=useState<boolean>(false)
     // 弹出层的ref
     const popperNode=useRef<HTMLDivElement|null>(null)
@@ -69,6 +69,9 @@ const MyTooltip=forwardRef<TooltipInstance,TooltipProps>((props, ref)=>{
     useClickOutside(poperContainerNode,()=>{
         if(trigger==='click'&&isOpen===true&&!manual){
             closeFinal()
+        }
+        if(isOpen){
+            onClickOutSide?.(false)
         }
     })
     const eventHandler={

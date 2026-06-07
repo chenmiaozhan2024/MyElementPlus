@@ -15,5 +15,13 @@ export interface MyInputProps{
   autofocus?:boolean,
   form?:string,
   onUpdateModelValue?:(value:string)=>void;
-  
+}
+
+export interface InputInstance{
+  focus:()=>void
+  blur:()=>void
+  clear:()=>void
+  select:()=>void
+  input:HTMLInputElement|null
+  textarea:HTMLTextAreaElement|null
 }

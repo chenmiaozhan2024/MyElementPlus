@@ -1,10 +1,10 @@
-import { MyInputProps } from "./type";
+import { MyInputProps,InputInstance } from "./type";
 import classNames from "classnames";
-import { useEffect, useMemo, useRef, useState, forwardRef } from "react";
+import { useEffect, useMemo, useRef, useState, forwardRef, useImperativeHandle } from "react";
 import MyIcon from '@my-element/components/component/MyIcon/MyIcon'
 import './style.css'
 
-const MyInput = forwardRef((props: MyInputProps, ref) => {
+const MyInput = forwardRef<InputInstance, MyInputProps>((props, ref) => {
   const {
     type = 'text', size, disabled, clearable, showPassword,
     preped, append, prefix, suffix, modelValue, readonly,
@@ -21,15 +21,23 @@ const MyInput = forwardRef((props: MyInputProps, ref) => {
     setInnerValue(modelValue as string)
   }, [modelValue])
 
-  useEffect(() => {
-    if (!ref) return
-    const dom = type !== 'textarea' ? inputRef.current : textareaRef.current
-    if (typeof ref === 'function') {
-      ref(dom)
-    } else {
-      ref.current = dom
-    }
-  }, [ref, type])
+  useImperativeHandle(ref, () => ({
+    focus: () => {
+      const dom = type !== 'textarea' ? inputRef.current : textareaRef.current
+      dom?.focus()
+    },
+    blur: () => {
+      const dom = type !== 'textarea' ? inputRef.current : textareaRef.current
+      dom?.blur()
+    },
+    clear: handleClear,
+    select: () => {
+      const dom = type !== 'textarea' ? inputRef.current : textareaRef.current
+      dom?.select()
+    },
+    get input() { return inputRef.current },
+    get textarea() { return textareaRef.current },
+  }), [type])
 
   const showClear = useMemo(() => {
     return clearable && !disabled && !!innerValue && isFocus

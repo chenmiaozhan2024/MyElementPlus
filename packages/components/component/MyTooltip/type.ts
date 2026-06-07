@@ -9,6 +9,7 @@ export  interface  TooltipProps{
     popperOptionsType?:Partial<Options>,
     openDelay?:number//打开延迟
     closeDelay?:number//关闭延迟
+    onClickOutSide?:(visible:boolean)=>void
 }
 export interface TooltipInstance{
     show:()=>void
