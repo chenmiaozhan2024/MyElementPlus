@@ -9,9 +9,9 @@ const options = [
 ]
 
 const MySelectTest = () => {
-  const [test, setTest] = useState('1')
+  const [test, setTest] = useState('')
   return (
-    <MySelect modelValue={test} options={options} onUpdateModelValue={setTest} placeholder="请选择" clearable />
+    <MySelect modelValue={test} options={options} onUpdateModelValue={setTest} placeholder="请选择" clearable filterable/>
   )
 }
 

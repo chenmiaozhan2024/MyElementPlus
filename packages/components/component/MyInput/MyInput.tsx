@@ -8,7 +8,7 @@ const MyInput = forwardRef<InputInstance, MyInputProps>((props, ref) => {
   const {
     type = 'text', size, disabled, clearable, showPassword,
     preped, append, prefix, suffix, modelValue, readonly,
-    autocomplete = 'off', placeholder, autofocus, form
+    autocomplete = 'off', placeholder, autofocus, form, onInput
   } = props
 
   const [isFocus, setIsFocus] = useState(false)
@@ -106,6 +106,7 @@ const MyInput = forwardRef<InputInstance, MyInputProps>((props, ref) => {
             autoFocus={autofocus}
             form={form}
             readOnly={readonly}
+            {...(onInput ? { onInput } : {})}
           />
           {(suffix || showClear || showPasswordArea) && (
             <span className="my-input__suffix">

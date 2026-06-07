@@ -15,6 +15,7 @@ export interface MyInputProps{
   autofocus?:boolean,
   form?:string,
   onUpdateModelValue?:(value:string)=>void;
+  onInput?: React.FormEventHandler<HTMLInputElement>;
 }
 
 export interface InputInstance{
